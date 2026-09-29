@@ -24,6 +24,8 @@ WRITER_ALLOW = {
 MAIN_ALLOW_IN_RUNS = re.compile(r"^runs/[^/]+/(notion_done|notion_readback)\.json$")
 PROTECTED = re.compile(r"^(input/|refs/|scripts/|tests/|\.claude/|rules\.yaml$|CLAUDE\.md$|runs/)")
 BASH_WRITE = re.compile(r"(>|\btee\b|\bsed\s+-i|\bmv\b|\bcp\b|\brm\b|\btouch\b|\bperl\s+-i|python3?\s+-c|\bchmod\b|\bln\b)")
+# 출력 버리기(>/dev/null)와 출력 합치기(2>&1)는 파일을 바꾸지 않으므로 검사 전에 지운다
+HARMLESS_REDIRECT = re.compile(r"\d?>>?\s*(/dev/null\b|&\d)")
 BASH_PROTECTED = re.compile(r"(input/|refs/|scripts/|tests/|\.claude/|rules\.yaml|CLAUDE\.md|runs/|state\.json|approval)")
 
 
@@ -76,7 +78,8 @@ def main():
             deny(role, tool, cmd, "writer는 Bash를 쓸 수 없습니다")
         else:
             is_script = re.fullmatch(r"\s*python3 scripts/\w+\.py[^;&|>`$]*", cmd)
-            if not is_script and BASH_WRITE.search(cmd) and BASH_PROTECTED.search(cmd):
+            checked = HARMLESS_REDIRECT.sub(" ", cmd)
+            if not is_script and BASH_WRITE.search(checked) and BASH_PROTECTED.search(checked):
                 deny(role, tool, cmd, "보호된 파일을 셸로 바꾸려 했습니다. scripts/ 의 스크립트를 쓰세요")
 
     elif tool == "WebFetch":
