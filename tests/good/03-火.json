@@ -1,0 +1,29 @@
+{
+  "char": "火",
+  "examples": [
+    {
+      "sentence": "화요일(火曜日)에는 미술 수업이 있어요.",
+      "context": "school",
+      "word_hangul": "화요일",
+      "word_hanja": "火曜日"
+    },
+    {
+      "sentence": "화재(火災)가 나면 어른에게 바로 알려요.",
+      "context": "home",
+      "word_hangul": "화재",
+      "word_hanja": "火災"
+    },
+    {
+      "sentence": "화산(火山)이 터지면 뜨거운 돌이 나와요.",
+      "context": "weather",
+      "word_hangul": "화산",
+      "word_hanja": "火山"
+    },
+    {
+      "sentence": "가게에서 화력(火力)이 센 냄비를 팔아요.",
+      "context": "shop",
+      "word_hangul": "화력",
+      "word_hanja": "火力"
+    }
+  ]
+}

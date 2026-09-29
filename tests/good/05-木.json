@@ -1,0 +1,29 @@
+{
+  "char": "木",
+  "examples": [
+    {
+      "sentence": "목요일(木曜日)에는 체육 수업이 있어요.",
+      "context": "school",
+      "word_hangul": "목요일",
+      "word_hanja": "木曜日"
+    },
+    {
+      "sentence": "아빠가 목재(木材)로 의자를 만들었어요.",
+      "context": "home",
+      "word_hangul": "목재",
+      "word_hanja": "木材"
+    },
+    {
+      "sentence": "가게에서 목공(木工) 도구를 샀어요.",
+      "context": "shop",
+      "word_hangul": "목공",
+      "word_hanja": "木工"
+    },
+    {
+      "sentence": "비 온 뒤 수목(樹木)이 더 푸르러요.",
+      "context": "weather",
+      "word_hangul": "수목",
+      "word_hanja": "樹木"
+    }
+  ]
+}

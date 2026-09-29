@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/make_list.py:*)",
+      "Bash(python3 scripts/judge.py:*)",
+      "Bash(python3 scripts/review.py:*)",
+      "Bash(python3 scripts/state.py:*)",
+      "Bash(python3 scripts/notion_payload.py:*)",
+      "WebFetch(domain:hanja.dict.naver.com)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash|WebFetch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/scripts/guard.py\""
+          }
+        ]
+      }
+    ]
+  }
+}

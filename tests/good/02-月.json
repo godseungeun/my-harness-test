@@ -1,0 +1,29 @@
+{
+  "char": "月",
+  "examples": [
+    {
+      "sentence": "우리 가족은 매월(每月) 집에서 영화를 봐요.",
+      "context": "home",
+      "word_hangul": "매월",
+      "word_hanja": "每月"
+    },
+    {
+      "sentence": "이번 월요일(月曜日)에 학교에서 소풍을 가요.",
+      "context": "school",
+      "word_hangul": "월요일",
+      "word_hanja": "月曜日"
+    },
+    {
+      "sentence": "정월(正月)에는 떡국을 먹어요.",
+      "context": "home",
+      "word_hangul": "정월",
+      "word_hanja": "正月"
+    },
+    {
+      "sentence": "이번 월말(月末)에는 비가 많이 온대요.",
+      "context": "weather",
+      "word_hangul": "월말",
+      "word_hanja": "月末"
+    }
+  ]
+}

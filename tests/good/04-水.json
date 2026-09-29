@@ -1,0 +1,29 @@
+{
+  "char": "水",
+  "examples": [
+    {
+      "sentence": "수요일(水曜日)에 학교 수영장에 가요.",
+      "context": "school",
+      "word_hangul": "수요일",
+      "word_hanja": "水曜日"
+    },
+    {
+      "sentence": "목이 마르면 생수(生水)를 마셔요.",
+      "context": "home",
+      "word_hangul": "생수",
+      "word_hanja": "生水"
+    },
+    {
+      "sentence": "비가 많이 와서 홍수(洪水)가 났어요.",
+      "context": "weather",
+      "word_hangul": "홍수",
+      "word_hanja": "洪水"
+    },
+    {
+      "sentence": "정류장 옆에 급수대(給水臺)가 있어요.",
+      "context": "traffic",
+      "word_hangul": "급수대",
+      "word_hanja": "給水臺"
+    }
+  ]
+}

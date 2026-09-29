@@ -1,0 +1,30 @@
+{
+  "char": "日",
+  "expect_rule": "pattern_target",
+  "examples": [
+    {
+      "sentence": "내 친구(親舊)는 착해요.",
+      "context": "home",
+      "word_hangul": "친구",
+      "word_hanja": "親舊"
+    },
+    {
+      "sentence": "오늘은 학교 가는 평일(平日)이에요.",
+      "context": "school",
+      "word_hangul": "평일",
+      "word_hanja": "平日"
+    },
+    {
+      "sentence": "일요일(日曜日)에는 가게 문을 일찍 닫아요.",
+      "context": "shop",
+      "word_hangul": "일요일",
+      "word_hanja": "日曜日"
+    },
+    {
+      "sentence": "매일(每日) 아침 버스를 타고 학교에 가요.",
+      "context": "traffic",
+      "word_hangul": "매일",
+      "word_hanja": "每日"
+    }
+  ]
+}

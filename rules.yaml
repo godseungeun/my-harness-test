@@ -1,0 +1,41 @@
+# 한자원정대 하네스 — 규칙 SSOT
+# 숫자와 목록은 여기에만 둔다. 문서와 다르면 이 파일이 맞다.
+# 사람만 수정한다 (훅이 에이전트의 수정을 막는다).
+
+batch:
+  max_size: 50
+  grades: [8급, 7급II, 7급, 6급II, 6급]   # Notion `급수` 표기와 같게 (영문 II)
+  skip_status: 검증 완료                   # Notion에서 이 상태인 한자는 S1에서 제외
+
+hanja:
+  nature_values: [상형자, 지사자, 회의자, 형성자]
+  components_required_for: [회의자, 형성자]   # 나머지 성격은 구성 요소를 비워 둔다
+  nature_source_url_prefix: 'https://hanja.dict.naver.com/'
+
+example:
+  count_per_hanja: 4
+  context_values: [school, home, shop, traffic, weather, etc]
+  min_distinct_context: 3
+  max_length_with_spaces: 55
+  end_marks: '.?!'
+  end_marks_exact: 1
+  target_word_count_exact: 1          # 한글(漢字) 표기가 정확히 1번
+  target_word_list: refs/basic-words.csv   # 목록에 없으면 탈락이 아니라 needs-human
+  duplicate_word_allowed: true
+
+forbidden:
+  # story-service "어기면 안 되는 것" — 하나라도 걸리면 즉시 실패
+  words: [http, www., .com, .kr, 구매, 결제, 할인, 이벤트, 쿠폰, 무료체험, 사세요, 채팅, DM, 카톡, 친구 추가, 모르는 사람, 사진을 보내]
+  patterns: ['\d{2,3}-\d{3,4}-\d{4}', '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}']
+  names_file: refs/banned-names.txt
+
+review:
+  sample_size: 10
+  full_review_if_rejects_gte: 2
+
+retry:
+  max_per_hanja: 3
+  s5_max: 3
+
+retro:
+  reject_ratio_alert: 0.2
